@@ -7,6 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
+import java.util.Set;
 import java.util.UUID;
 
 public class ReplyCommand implements CommandExecutor {
@@ -42,6 +43,12 @@ public class ReplyCommand implements CommandExecutor {
         }
 
         String message = String.join(" ", args);
+        // If the recipient is ignoring the sender, don't deliver
+        Set<UUID> recipientIgnored = plugin.getIgnored().get(target.getUniqueId());
+        if (recipientIgnored != null && recipientIgnored.contains(pSender.getUniqueId())) {
+            pSender.sendMessage(ChatColor.RED + "That player is ignoring you.");
+            return true;
+        }
 
         pSender.sendMessage(ChatColor.GRAY + "To " + ChatColor.WHITE + target.getName() + ChatColor.GRAY + ": " + ChatColor.LIGHT_PURPLE + message);
         target.sendMessage(ChatColor.GRAY + "From " + ChatColor.WHITE + pSender.getName() + ChatColor.GRAY + ": " + ChatColor.LIGHT_PURPLE + message);

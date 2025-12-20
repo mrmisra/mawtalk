@@ -11,3 +11,14 @@ commands:
     description: Reply to last messaged player
     aliases: [r]
     usage: /reply <message>
+  ignore:
+    description: Ignore a player (block private & public messages)
+    usage: /ignore <player>
+  unignore:
+    description: Stop ignoring a player
+    usage: /unignore <player>
+  ignorelist:
+    description: List players you are ignoring
+  mawtalk:
+    description: Show MawTalk help
+    aliases: [mt]
