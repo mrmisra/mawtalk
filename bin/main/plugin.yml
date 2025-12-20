@@ -1,0 +1,13 @@
+name: MawTalk
+main: org.eu.mawtalk.MawTalk
+version: 1.0
+api-version: 1.12
+commands:
+  msg:
+    description: Send a private message
+    aliases: [w]
+    usage: /msg <player> <message>
+  reply:
+    description: Reply to last messaged player
+    aliases: [r]
+    usage: /reply <message>
