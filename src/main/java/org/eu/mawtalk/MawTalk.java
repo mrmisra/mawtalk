@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class MawTalk extends JavaPlugin {
     private final Map<UUID, UUID> lastMessager = new ConcurrentHashMap<>();
     private final Map<UUID, Set<UUID>> ignored = new ConcurrentHashMap<>();
+    private PartyManager partyManager = new PartyManager();
 
     @Override
     public void onEnable() {
@@ -20,6 +21,7 @@ public class MawTalk extends JavaPlugin {
         this.getCommand("unignore").setExecutor(new UnignoreCommand(this));
         this.getCommand("ignorelist").setExecutor(new IgnoreListCommand(this));
         this.getCommand("mawtalk").setExecutor(new HelpCommand(this));
+        this.getCommand("party").setExecutor(new PartyCommand(this));
 
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new ChatListener(this), this);
@@ -38,5 +40,9 @@ public class MawTalk extends JavaPlugin {
 
     public Map<UUID, Set<UUID>> getIgnored() {
         return ignored;
+    }
+
+    public PartyManager getPartyManager() {
+        return partyManager;
     }
 }

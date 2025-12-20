@@ -22,3 +22,6 @@ commands:
   mawtalk:
     description: Show MawTalk help
     aliases: [mt]
+  party:
+    description: Create and manage parties
+    usage: /party <create|invite|accept|leave|chat>
