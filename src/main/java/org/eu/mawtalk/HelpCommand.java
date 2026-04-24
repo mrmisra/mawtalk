@@ -21,6 +21,7 @@ public class HelpCommand implements CommandExecutor {
         sender.sendMessage(ChatColor.GRAY + "/ignore <player>  " + ChatColor.WHITE + "Ignore a player (private & public chat)");
         sender.sendMessage(ChatColor.GRAY + "/unignore <player>  " + ChatColor.WHITE + "Stop ignoring a player");
         sender.sendMessage(ChatColor.GRAY + "/ignorelist  " + ChatColor.WHITE + "List players you are ignoring");
+        sender.sendMessage(ChatColor.GRAY + "/party <create/invite/accept/leave/chat>  " + ChatColor.WHITE + "List players you are ignoring");
         return true;
     }
 }

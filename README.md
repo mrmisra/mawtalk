@@ -23,4 +23,3 @@ Simple, lightweight private-messaging and party chat plugin for PaperMC 1.12.
 - /party leave — leave your current party
 - /party chat — toggle party chat on/off (when on, your chat is sent only to party members)
 
-This project has been closed.
